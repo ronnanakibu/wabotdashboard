@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import type { FC } from 'react';
+import type { FC, MouseEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { useRadio } from '../../context/RadioContext';
 
@@ -174,11 +174,11 @@ export const LandingNav: FC<LandingNavProps> = ({ currentAccent, onAccentChange 
                 transition: 'color 0.15s ease, background-color 0.15s ease',
                 cursor: 'pointer'
               }}
-              onMouseEnter={(e) => {
+              onMouseEnter={(e: MouseEvent<HTMLElement>) => {
                 e.currentTarget.style.color = 'var(--text)';
                 e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)';
               }}
-              onMouseLeave={(e) => {
+              onMouseLeave={(e: MouseEvent<HTMLElement>) => {
                 e.currentTarget.style.color = 'var(--text-muted)';
                 e.currentTarget.style.backgroundColor = 'transparent';
               }}
@@ -251,11 +251,11 @@ export const LandingNav: FC<LandingNavProps> = ({ currentAccent, onAccentChange 
               textDecoration: 'none',
               whiteSpace: 'nowrap'
             }}
-            onMouseEnter={(e) => {
+            onMouseEnter={(e: MouseEvent<HTMLElement>) => {
               e.currentTarget.style.transform = 'translateY(-1px)';
               e.currentTarget.style.boxShadow = '0 4px 18px rgba(127, 209, 199, 0.4)';
             }}
-            onMouseLeave={(e) => {
+            onMouseLeave={(e: MouseEvent<HTMLElement>) => {
               e.currentTarget.style.transform = 'translateY(0)';
               e.currentTarget.style.boxShadow = '0 2px 14px rgba(127, 209, 199, 0.25)';
             }}

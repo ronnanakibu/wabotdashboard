@@ -217,6 +217,23 @@ input, select, textarea {
   }
 }
 
+.ecosystem-card {
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ecosystem-card:hover {
+  border-color: var(--accent) !important;
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4) !important;
+}
+
+.hero-stat-card {
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+.hero-stat-card:hover {
+  border-color: var(--border-strong) !important;
+  transform: translateY(-2px) !important;
+}
+
 /* Mobile Screens Enhancements (Smartphones & Tablets <640px) */
 @media (max-width: 640px) {
   /* Hero */

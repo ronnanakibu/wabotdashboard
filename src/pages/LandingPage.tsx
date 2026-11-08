@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import type { FC } from 'react';
+import type { FC, MouseEvent } from 'react';
 import { Link } from 'react-router-dom';
 import { HeroCanvas } from '../components/landing/HeroCanvas';
 import { LandingNav } from '../components/landing/LandingNav';
@@ -250,11 +250,11 @@ export const LandingPage: FC = () => {
                 cursor: 'pointer',
                 boxSizing: 'border-box'
               }}
-              onMouseEnter={(e) => {
+              onMouseEnter={(e: MouseEvent<HTMLElement>) => {
                 e.currentTarget.style.transform = 'translateY(-2px)';
                 e.currentTarget.style.boxShadow = '0 6px 24px rgba(127, 209, 199, 0.45)';
               }}
-              onMouseLeave={(e) => {
+              onMouseLeave={(e: MouseEvent<HTMLElement>) => {
                 e.currentTarget.style.transform = 'translateY(0)';
                 e.currentTarget.style.boxShadow = '0 4px 20px rgba(127, 209, 199, 0.3)';
               }}
@@ -286,12 +286,12 @@ export const LandingPage: FC = () => {
                 cursor: 'pointer',
                 boxSizing: 'border-box'
               }}
-              onMouseEnter={(e) => {
+              onMouseEnter={(e: MouseEvent<HTMLElement>) => {
                 e.currentTarget.style.backgroundColor = 'var(--surface-selected)';
                 e.currentTarget.style.borderColor = 'var(--accent)';
                 e.currentTarget.style.transform = 'translateY(-1px)';
               }}
-              onMouseLeave={(e) => {
+              onMouseLeave={(e: MouseEvent<HTMLElement>) => {
                 e.currentTarget.style.backgroundColor = 'var(--surface)';
                 e.currentTarget.style.borderColor = 'var(--border-strong)';
                 e.currentTarget.style.transform = 'translateY(0)';
@@ -324,11 +324,11 @@ export const LandingPage: FC = () => {
                 cursor: 'pointer',
                 boxSizing: 'border-box'
               }}
-              onMouseEnter={(e) => {
+              onMouseEnter={(e: MouseEvent<HTMLElement>) => {
                 e.currentTarget.style.color = 'var(--text)';
                 e.currentTarget.style.borderColor = 'var(--text-dim)';
               }}
-              onMouseLeave={(e) => {
+              onMouseLeave={(e: MouseEvent<HTMLElement>) => {
                 e.currentTarget.style.color = 'var(--text-muted)';
                 e.currentTarget.style.borderColor = 'var(--border)';
               }}
@@ -377,11 +377,11 @@ export const LandingPage: FC = () => {
                   minWidth: 0,
                   boxSizing: 'border-box'
                 }}
-                onMouseEnter={(e) => {
+                onMouseEnter={(e: MouseEvent<HTMLElement>) => {
                   e.currentTarget.style.borderColor = 'var(--border-strong)';
                   e.currentTarget.style.transform = 'translateY(-2px)';
                 }}
-                onMouseLeave={(e) => {
+                onMouseLeave={(e: MouseEvent<HTMLElement>) => {
                   e.currentTarget.style.borderColor = 'var(--border)';
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
@@ -479,18 +479,7 @@ export const LandingPage: FC = () => {
               position: 'relative',
               overflow: 'hidden',
               boxSizing: 'border-box',
-              minWidth: 0,
-              transition: 'border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = 'var(--accent)';
-              e.currentTarget.style.transform = 'translateY(-3px)';
-              e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.4)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'var(--border)';
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = 'none';
+              minWidth: 0
             }}
           >
             <div>
@@ -609,18 +598,7 @@ export const LandingPage: FC = () => {
               position: 'relative',
               overflow: 'hidden',
               boxSizing: 'border-box',
-              minWidth: 0,
-              transition: 'border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = 'var(--accent)';
-              e.currentTarget.style.transform = 'translateY(-3px)';
-              e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.4)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'var(--border)';
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = 'none';
+              minWidth: 0
             }}
           >
             <div>
@@ -722,18 +700,7 @@ export const LandingPage: FC = () => {
               position: 'relative',
               overflow: 'hidden',
               boxSizing: 'border-box',
-              minWidth: 0,
-              transition: 'border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = 'var(--accent)';
-              e.currentTarget.style.transform = 'translateY(-3px)';
-              e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.4)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'var(--border)';
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = 'none';
+              minWidth: 0
             }}
           >
             <div>
@@ -835,18 +802,7 @@ export const LandingPage: FC = () => {
               position: 'relative',
               overflow: 'hidden',
               boxSizing: 'border-box',
-              minWidth: 0,
-              transition: 'border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = 'var(--accent)';
-              e.currentTarget.style.transform = 'translateY(-3px)';
-              e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.4)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'var(--border)';
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = 'none';
+              minWidth: 0
             }}
           >
             <div>
@@ -948,18 +904,7 @@ export const LandingPage: FC = () => {
               position: 'relative',
               overflow: 'hidden',
               boxSizing: 'border-box',
-              minWidth: 0,
-              transition: 'border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = 'var(--accent)';
-              e.currentTarget.style.transform = 'translateY(-3px)';
-              e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.4)';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = 'var(--border)';
-              e.currentTarget.style.transform = 'translateY(0)';
-              e.currentTarget.style.boxShadow = 'none';
+              minWidth: 0
             }}
           >
             <div>
