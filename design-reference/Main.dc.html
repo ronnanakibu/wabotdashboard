@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>ronn.ai Radio Hub</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0B0D10}
+a{text-decoration:none}
+</style>
+</helmet>
+<div style="width:100%; min-height:100vh; box-sizing:border-box; display:flex; flex-wrap:wrap; background:#0B0D10; color:#E6E8EB; font-family:'Inter',system-ui,sans-serif">
+
+  <!-- SIDEBAR -->
+  <aside style="flex:0 1 248px; box-sizing:border-box; padding:24px 16px; border-right:1px solid #1E242C; display:flex; flex-direction:column; gap:28px">
+    <div style="display:flex; align-items:center; gap:10px; padding:0 8px">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2"></circle><path d="M16.2 7.8a6 6 0 0 1 0 8.4M7.8 16.2a6 6 0 0 1 0-8.4M19.1 4.9a10 10 0 0 1 0 14.2M4.9 19.1a10 10 0 0 1 0-14.2"></path></svg>
+      <span style="font-weight:600; font-size:16px; letter-spacing:-0.01em">ronn<span style="color:{{accent}}">.ai</span></span>
+    </div>
+
+    <nav aria-label="Navigasi utama" style="display:flex; flex-direction:column; gap:20px">
+      <div style="display:flex; flex-direction:column; gap:4px">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.12em; color:#7D858F; padding:0 12px 6px">PUBLIK</div>
+        <a href="Main.dc.html" style="display:flex; align-items:center; gap:12px; height:40px; padding:0 12px; border-radius:6px; font-size:14px; background:#12161B; color:#E6E8EB">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2"></circle><path d="M16.2 7.8a6 6 0 0 1 0 8.4M7.8 16.2a6 6 0 0 1 0-8.4M19.1 4.9a10 10 0 0 1 0 14.2M4.9 19.1a10 10 0 0 1 0-14.2"></path></svg>
+          Radio Hub
+        </a>
+        <a href="Commands.dc.html" style="display:flex; align-items:center; gap:12px; height:40px; padding:0 12px; border-radius:6px; font-size:14px; color:#8A929C">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+          Commands
+        </a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:4px">
+        <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.12em; color:#7D858F; padding:0 12px 6px">OWNER</div>
+        <a href="Groups.dc.html" style="display:flex; align-items:center; gap:12px; height:40px; padding:0 12px; border-radius:6px; font-size:14px; color:#8A929C">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          Groups
+          <svg style="margin-left:auto; color:#7D858F" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>
+        </a>
+        <a href="AICenter.dc.html" style="display:flex; align-items:center; gap:12px; height:40px; padding:0 12px; border-radius:6px; font-size:14px; color:#8A929C">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"></path><path d="M19 17v4M17 19h4"></path></svg>
+          AI Center
+          <svg style="margin-left:auto; color:#7D858F" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>
+        </a>
+        <a href="Observatory.dc.html" style="display:flex; align-items:center; gap:12px; height:40px; padding:0 12px; border-radius:6px; font-size:14px; color:#8A929C">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          Observatory
+          <svg style="margin-left:auto; color:#7D858F" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>
+        </a>
+        <a href="Telemetry.dc.html" style="display:flex; align-items:center; gap:12px; height:40px; padding:0 12px; border-radius:6px; font-size:14px; color:#8A929C">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+          System
+          <svg style="margin-left:auto; color:#7D858F" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Khusus owner"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>
+        </a>
+        <a href="Logs.dc.html" style="display:flex; align-items:center; gap:12px; height:40px; padding:0 12px; border-radius:6px; font-size:14px; color:#8A929C">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 6H3M21 12H3M15 18H3"></path></svg>
+          Terminal
+          <svg style="margin-left:auto; color:#7D858F" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" role="img" aria-label="Khusus owner"><rect x="4" y="11" width="16" height="10" rx="2"></rect><path d="M8 11V7a4 4 0 0 1 8 0v4"></path></svg>
+        </a>
+      </div>
+    </nav>
+
+    <!-- persistent mini-player -->
+    <div style="margin-top:auto; border:1px solid #1E242C; border-radius:8px; background:#12161B; padding:12px; display:flex; flex-direction:column; gap:10px">
+      <div style="display:flex; align-items:center; gap:10px">
+        <svg width="36" height="36" viewBox="0 0 36 36" style="flex:0 0 36px; border-radius:4px" aria-hidden="true"><rect width="36" height="36" fill="#141C26"></rect><circle cx="22" cy="13" r="7.5" fill="#DCE5E3"></circle><circle cx="25" cy="11" r="6.7" fill="#141C26"></circle></svg>
+        <div style="flex:1; min-width:0">
+          <div style="font-size:13px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis">Clair de Lune</div>
+          <div style="font-size:12px; color:#8A929C; white-space:nowrap; overflow:hidden; text-overflow:ellipsis">Claude Debussy</div>
+        </div>
+        <button aria-label="Jeda siaran" style="flex:0 0 44px; width:44px; height:44px; border-radius:50%; border:1px solid #2A323C; background:transparent; color:#E6E8EB; display:flex; align-items:center; justify-content:center; cursor:pointer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="4" height="16" rx="1"></rect><rect x="15" y="4" width="4" height="16" rx="1"></rect></svg>
+        </button>
+      </div>
+      <div style="height:2px; background:#1E242C; border-radius:1px"><div style="width:33%; height:2px; background:{{accent}}; border-radius:1px"></div></div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main style="flex:999 1 560px; min-width:0; box-sizing:border-box; padding:28px 40px 56px; display:flex; flex-direction:column; gap:32px">
+
+    <header style="display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px">
+      <h1 style="margin:0; font-size:20px; font-weight:600; letter-spacing:-0.01em">Radio Hub</h1>
+      <div style="display:flex; align-items:center; gap:10px; height:32px; padding:0 12px; border:1px solid #1E242C; border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:12px; color:#8A929C">
+        <span style="width:7px; height:7px; border-radius:50%; background:{{accent}}"></span>
+        ON AIR · siaran 24/7
+      </div>
+    </header>
+
+    <!-- NOW PLAYING HERO -->
+    <section aria-label="Sedang diputar" style="position:relative; overflow:hidden; border:1px solid #1E242C; border-radius:8px; background:#12161B">
+      <div aria-hidden="true" style="position:absolute; left:-80px; top:-100px; width:460px; height:460px; border-radius:50%; background:#DCE5E3; opacity:0.13; filter:blur(80px)"></div>
+      <div aria-hidden="true" style="position:absolute; right:-60px; bottom:-140px; width:420px; height:420px; border-radius:50%; background:{{accent}}; opacity:0.10; filter:blur(90px)"></div>
+
+      <div style="position:relative; display:flex; flex-wrap:wrap; gap:36px; padding:32px">
+        <svg role="img" aria-label="Cover art Clair de Lune" width="280" height="280" viewBox="0 0 280 280" style="flex:0 0 280px; display:block; border-radius:6px; border:1px solid #2A323C">
+          <rect width="280" height="280" fill="#141C26"></rect>
+          <circle cx="176" cy="104" r="58" fill="#DCE5E3"></circle>
+          <circle cx="200" cy="90" r="52" fill="#141C26"></circle>
+          <g stroke="{{accent}}" stroke-width="1" opacity="0.7"><line x1="64" y1="196" x2="216" y2="196"></line><line x1="84" y1="210" x2="196" y2="210"></line><line x1="104" y1="224" x2="176" y2="224"></line></g>
+        </svg>
+
+        <div style="flex:1 1 360px; min-width:0; display:flex; flex-direction:column; justify-content:space-between; gap:24px">
+          <div style="display:flex; flex-direction:column; gap:10px">
+            <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.14em; color:{{accent}}">NOW PLAYING</div>
+            <h2 style="margin:0; font-size:48px; line-height:1.05; font-weight:500; letter-spacing:-0.03em">Clair de Lune</h2>
+            <div style="font-size:18px; color:#8A929C">Claude Debussy</div>
+            <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:6px">
+              <span style="display:inline-flex; align-items:center; height:28px; padding:0 10px; border:1px solid #2A323C; border-radius:999px; font-family:'JetBrains Mono',monospace; font-size:12px; color:#8A929C">05:12</span>
+              <span style="display:inline-flex; align-items:center; gap:8px; height:28px; padding:0 10px; border:1px solid #2A323C; border-radius:999px; font-size:12px; color:#8A929C">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+                Diminta <span style="font-family:'JetBrains Mono',monospace; color:#E6E8EB">62812****3421</span> via WA
+              </span>
+            </div>
+          </div>
+
+          <div role="img" aria-label="Visualizer audio" style="display:flex; align-items:center; justify-content:space-between; height:80px">
+            <sc-for list="{{bars}}" as="b" hint-placeholder-count="64">
+              <div style="width:2px; height:{{b.h}}px; border-radius:1px; background:{{accent}}; opacity:{{b.o}}"></div>
+            </sc-for>
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:14px">
+            <div style="display:flex; align-items:center; gap:14px">
+              <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#8A929C">01:42</span>
+              <div style="flex:1; height:2px; background:#2A323C; border-radius:1px"><div style="width:33%; height:2px; background:{{accent}}; border-radius:1px"></div></div>
+              <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#8A929C">05:12</span>
+            </div>
+            <div style="display:flex; align-items:center; gap:20px">
+              <button aria-label="Jeda siaran" style="width:48px; height:48px; border-radius:50%; border:1px solid {{accent}}; background:transparent; color:{{accent}}; display:flex; align-items:center; justify-content:center; cursor:pointer">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="5" y="4" width="4" height="16" rx="1"></rect><rect x="15" y="4" width="4" height="16" rx="1"></rect></svg>
+              </button>
+              <div style="display:flex; align-items:center; gap:10px; color:#8A929C">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.5 8.5a5 5 0 0 1 0 7M19 5a10 10 0 0 1 0 14"></path></svg>
+                <div style="width:120px; height:2px; background:#2A323C; border-radius:1px"><div style="width:70%; height:2px; background:#E6E8EB; border-radius:1px"></div></div>
+              </div>
+              <span style="margin-left:auto; font-family:'JetBrains Mono',monospace; font-size:12px; color:#8A929C">live · tidak bisa di-seek</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SONG REQUEST -->
+    <section aria-label="Request lagu" style="display:flex; flex-direction:column; gap:12px">
+      <div style="font-family:'JetBrains Mono',monospace; font-size:11px; letter-spacing:0.14em; color:#8A929C">REQUEST LAGU</div>
+      <div style="display:flex; flex-wrap:wrap; gap:12px">
+        <div style="flex:1 1 360px; min-width:0; display:flex; align-items:center; gap:12px; height:56px; padding:0 16px; box-sizing:border-box; border:1px solid #2A323C; border-radius:8px; background:#12161B">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8A929C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+          <input aria-label="Cari lagu untuk di-request" placeholder="Cari judul atau musisi" style="flex:1; min-width:0; background:transparent; border:0; outline:0; color:#E6E8EB; font-family:inherit; font-size:16px">
+          <span style="display:inline-flex; align-items:center; justify-content:center; min-width:24px; height:24px; border:1px solid #2A323C; border-radius:4px; font-family:'JetBrains Mono',monospace; font-size:12px; color:#8A929C">/</span>
+        </div>
+        <button style="height:56px; padding:0 24px; border:0; border-radius:8px; background:{{accent}}; color:#0B0D10; font-family:inherit; font-size:15px; font-weight:600; cursor:pointer">Kirim ke antrean</button>
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#8A929C">Maks. 3 request per 10 menit per sesi. Duplikat di antrean ditolak.</div>
+    </section>
+
+    <!-- QUEUE + HISTORY -->
+    <div style="display:flex; flex-wrap:wrap; gap:24px; align-items:flex-start">
+
+      <section aria-label="Antrean siaran" style="flex:1 1 400px; min-width:0; border:1px solid #1E242C; border-radius:8px; background:#12161B; padding:4px 20px 8px; box-sizing:border-box">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; padding:16px 0 12px">
+          <h3 style="margin:0; font-size:14px; font-weight:600">Antrean siaran</h3>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#8A929C">6 lagu · 26:41</span>
+        </div>
+        <sc-for list="{{queue}}" as="q" hint-placeholder-count="6">
+          <div style="display:flex; align-items:center; gap:14px; padding:12px 0; border-top:1px solid #1E242C">
+            <span style="flex:0 0 22px; font-family:'JetBrains Mono',monospace; font-size:12px; color:#7D858F">{{q.n}}</span>
+            <div style="flex:0 0 40px; width:40px; height:40px; border-radius:4px; background:{{q.tint}}"></div>
+            <div style="flex:1; min-width:0">
+              <div style="font-size:15px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis">{{q.title}}</div>
+              <div style="font-size:13px; color:#8A929C; white-space:nowrap; overflow:hidden; text-overflow:ellipsis">{{q.artist}} · <span style="font-family:'JetBrains Mono',monospace; font-size:12px">{{q.who}}</span></div>
+            </div>
+            <span style="display:inline-flex; align-items:center; height:22px; padding:0 8px; border:1px solid {{q.chipColor}}; border-radius:4px; font-family:'JetBrains Mono',monospace; font-size:11px; color:{{q.chipColor}}">{{q.via}}</span>
+            <span style="flex:0 0 40px; text-align:right; font-family:'JetBrains Mono',monospace; font-size:12px; color:#8A929C">{{q.dur}}</span>
+          </div>
+        </sc-for>
+        <div style="padding:12px 0 8px; border-top:1px solid #1E242C; font-family:'JetBrains Mono',monospace; font-size:12px; color:#8A929C">Dari WhatsApp: <span style="color:#E6E8EB">.play judul lagu</span></div>
+      </section>
+
+      <section aria-label="Riwayat lagu" style="flex:1 1 360px; min-width:0; border:1px solid #1E242C; border-radius:8px; background:#12161B; padding:4px 20px 8px; box-sizing:border-box">
+        <div style="display:flex; justify-content:space-between; align-items:baseline; padding:16px 0 12px">
+          <h3 style="margin:0; font-size:14px; font-weight:600">Baru diputar</h3>
+          <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#8A929C">5 terakhir</span>
+        </div>
+        <sc-for list="{{history}}" as="h" hint-placeholder-count="5">
+          <div style="display:flex; align-items:center; gap:14px; padding:12px 0; border-top:1px solid #1E242C">
+            <div style="flex:0 0 40px; width:40px; height:40px; border-radius:4px; background:{{h.tint}}"></div>
+            <div style="flex:1; min-width:0">
+              <div style="font-size:15px; font-weight:500; white-space:nowrap; overflow:hidden; text-overflow:ellipsis">{{h.title}}</div>
+              <div style="font-size:13px; color:#8A929C; white-space:nowrap; overflow:hidden; text-overflow:ellipsis">{{h.artist}}</div>
+            </div>
+            <span style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#8A929C; white-space:nowrap">{{h.ago}}</span>
+          </div>
+        </sc-for>
+      </section>
+    </div>
+
+    <!-- PUBLIC BOT STATUS -->
+    <section aria-label="Status bot publik" style="display:flex; flex-wrap:wrap; align-items:center; gap:24px 48px; padding:20px 24px; border:1px solid #1E242C; border-radius:8px; background:#12161B">
+      <div style="display:flex; align-items:center; gap:14px">
+        <span style="flex:0 0 10px; width:10px; height:10px; border-radius:50%; background:#7BC8A0; box-shadow:0 0 0 5px rgba(123,200,160,0.16)"></span>
+        <div>
+          <div style="font-size:14px; font-weight:500">Bot WhatsApp online</div>
+          <div style="font-family:'JetBrains Mono',monospace; font-size:12px; color:#8A929C">status publik</div>
+        </div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:4px">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:22px; font-weight:500; letter-spacing:-0.02em">2.317</span>
+        <span style="font-size:12px; color:#8A929C">Pesan diproses hari ini</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:4px">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:22px; font-weight:500; letter-spacing:-0.02em">6d 14h</span>
+        <span style="font-size:12px; color:#8A929C">Uptime</span>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:4px">
+        <span style="font-family:'JetBrains Mono',monospace; font-size:22px; font-weight:500; letter-spacing:-0.02em">38 ms</span>
+        <span style="font-size:12px; color:#8A929C">Latensi respons bot</span>
+      </div>
+    </section>
+
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#7FD1C7","options":["#7FD1C7","#C9B6FF","#E8C27A"]},"$preview":{"width":1440,"height":1540}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#7FD1C7';
+    const bars = [];
+    for (let i = 0; i < 64; i++) {
+      const v = Math.abs(Math.sin(i * 0.42) * Math.cos(i * 0.17 + 1)) * 0.75 + 0.18 * Math.abs(Math.sin(i * 1.3));
+      bars.push({ h: Math.round(8 + v * 64), o: Math.round((0.35 + v * 0.65) * 100) / 100 });
+    }
+    const wa = '#8A929C';
+    const queue = [
+      { n: '01', title: 'Nuvole Bianche', artist: 'Ludovico Einaudi', who: '62812****3421', via: 'WA', chipColor: wa, dur: '5:57', tint: '#1E2A33' },
+      { n: '02', title: 'Gymnopédie No. 1', artist: 'Erik Satie', who: 'guest-7f3a', via: 'WEB', chipColor: accent, dur: '3:05', tint: '#2A2433' },
+      { n: '03', title: 'Resonance', artist: 'HOME', who: '62857****0912', via: 'WA', chipColor: wa, dur: '3:32', tint: '#2B2A22' },
+      { n: '04', title: 'Intro', artist: 'The xx', who: '62813****7765', via: 'WA', chipColor: wa, dur: '2:07', tint: '#1F2E2B' },
+      { n: '05', title: 'River Flows in You', artist: 'Yiruma', who: 'guest-b21c', via: 'WEB', chipColor: accent, dur: '3:09', tint: '#2E2326' },
+      { n: '06', title: 'Holocene', artist: 'Bon Iver', who: '62821****0148', via: 'WA', chipColor: wa, dur: '5:36', tint: '#222A3A' }
+    ];
+    const history = [
+      { title: 'Experience', artist: 'Ludovico Einaudi', ago: '5 mnt lalu', tint: '#1E2A33' },
+      { title: 'Avril 14th', artist: 'Aphex Twin', ago: '9 mnt lalu', tint: '#2B2A22' },
+      { title: 'Teardrop', artist: 'Massive Attack', ago: '13 mnt lalu', tint: '#2A2433' },
+      { title: 'Svefn-g-englar', artist: 'Sigur Rós', ago: '22 mnt lalu', tint: '#1F2E2B' },
+      { title: 'An Ending (Ascent)', artist: 'Brian Eno', ago: '31 mnt lalu', tint: '#222A3A' }
+    ];
+    return { accent, bars, queue, history };
+  }
+}
+</script>
+</body>
+</html>

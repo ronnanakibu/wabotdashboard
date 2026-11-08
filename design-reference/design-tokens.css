@@ -1,0 +1,54 @@
+/* ronn.ai design tokens. Extracted 1:1 from the .dc.html mockups. Do not rename or "improve" values. */
+:root {
+  /* surfaces */
+  --bg: #0B0D10;
+  --surface: #12161B;
+  --surface-inset: #0E1116;      /* console body */
+  --surface-selected: #161B21;   /* active row / selected item */
+  --border: #1E242C;
+  --border-strong: #2A323C;
+
+  /* text */
+  --text: #E6E8EB;
+  --text-muted: #8A929C;
+  --text-dim: #7D858F;           /* timestamps, group labels, counts */
+  --text-log: #C9CED4;           /* console message body */
+
+  /* accent (single accent, user-switchable) */
+  --accent: #7FD1C7;
+
+  /* status (always desaturated, only as dot / text / 1px border, never big fills) */
+  --success: #7BC8A0;  --success-border: #2F4A3D;  --success-ring: rgba(123, 200, 160, 0.16);
+  --warning: #E0B46A;  --warning-border: #4D4128;
+  --danger:  #E8909A;  --danger-border:  #52303A;
+  --error:   #F08B8B;  --error-row: rgba(240, 139, 139, 0.07);
+
+  /* data viz */
+  --tier-0: #E6E8EB;
+  --tier-1: var(--accent);
+  --tier-2: #3E5C63;
+  --bar-idle: #3A4550;
+
+  /* cover art placeholder */
+  --cover-bg: #141C26;
+  --cover-moon: #DCE5E3;
+  --tint-1: #1E2A33; --tint-2: #2A2433; --tint-3: #2B2A22;
+  --tint-4: #1F2E2B; --tint-5: #2E2326; --tint-6: #222A3A;
+
+  /* type */
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  /* shape */
+  --radius-sm: 4px;    /* badges, kbd, small chips */
+  --radius-md: 6px;    /* nav items, inner boxes */
+  --radius-lg: 8px;    /* cards, buttons, inputs */
+  --radius-pill: 999px;
+
+  /* layout */
+  --sidebar-w: 248px;
+  --hit: 44px;         /* minimum touch target */
+}
+
+:root[data-accent="lavender"] { --accent: #C9B6FF; }
+:root[data-accent="amber"]    { --accent: #E8C27A; }
