@@ -43,12 +43,13 @@ export const LandingPage: FC = () => {
       style={{
         minHeight: '100dvh',
         width: '100%',
-        maxWidth: '100%',
+        maxWidth: '100vw',
         backgroundColor: 'var(--bg)',
         color: 'var(--text)',
         fontFamily: 'var(--font-sans)',
         position: 'relative',
-        overflowX: 'hidden'
+        overflowX: 'hidden',
+        boxSizing: 'border-box'
       }}
     >
       {/* Top Floating Glassmorphism Navbar */}
@@ -56,16 +57,19 @@ export const LandingPage: FC = () => {
 
       {/* Hero Section */}
       <section
+        className="hero-section"
         style={{
           position: 'relative',
-          padding: '140px 24px 80px',
+          padding: '130px 20px 70px',
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
           textAlign: 'center',
           overflow: 'hidden',
-          minHeight: '88dvh'
+          minHeight: '85dvh',
+          width: '100%',
+          boxSizing: 'border-box'
         }}
       >
         {/* Interactive 2D Cybernetic Canvas Background */}
@@ -78,8 +82,8 @@ export const LandingPage: FC = () => {
             position: 'absolute',
             top: '20%',
             left: '25%',
-            width: '450px',
-            height: '450px',
+            width: '400px',
+            height: '400px',
             borderRadius: '50%',
             background: 'radial-gradient(circle, var(--accent) 0%, transparent 70%)',
             filter: 'blur(100px)',
@@ -95,8 +99,8 @@ export const LandingPage: FC = () => {
             position: 'absolute',
             bottom: '10%',
             right: '20%',
-            width: '400px',
-            height: '400px',
+            width: '350px',
+            height: '350px',
             borderRadius: '50%',
             background: 'radial-gradient(circle, #C9B6FF 0%, transparent 70%)',
             filter: 'blur(90px)',
@@ -113,15 +117,18 @@ export const LandingPage: FC = () => {
             position: 'relative',
             zIndex: 2,
             maxWidth: '920px',
+            width: '100%',
             margin: '0 auto',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            gap: '24px'
+            gap: '20px',
+            boxSizing: 'border-box'
           }}
         >
           {/* Top Status Chip */}
           <div
+            className="hero-status-chip"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -131,7 +138,9 @@ export const LandingPage: FC = () => {
               background: 'rgba(18, 22, 27, 0.85)',
               border: '1px solid var(--border-strong)',
               backdropFilter: 'blur(12px)',
-              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)'
+              boxShadow: '0 4px 16px rgba(0, 0, 0, 0.4)',
+              boxSizing: 'border-box',
+              maxWidth: '100%'
             }}
           >
             <span
@@ -141,7 +150,8 @@ export const LandingPage: FC = () => {
                 height: '7px',
                 borderRadius: '50%',
                 background: 'var(--success)',
-                boxShadow: '0 0 8px var(--success)'
+                boxShadow: '0 0 8px var(--success)',
+                flexShrink: 0
               }}
             />
             <span
@@ -149,7 +159,7 @@ export const LandingPage: FC = () => {
                 fontFamily: 'var(--font-mono)',
                 fontSize: '11px',
                 fontWeight: 600,
-                letterSpacing: '0.08em',
+                letterSpacing: '0.06em',
                 color: 'var(--text)'
               }}
             >
@@ -170,12 +180,14 @@ export const LandingPage: FC = () => {
           {/* Master Headline */}
           <h1
             style={{
-              fontSize: 'clamp(32px, 5.5vw, 60px)',
+              fontSize: 'clamp(28px, 6.5vw, 56px)',
               fontWeight: 700,
-              lineHeight: 1.15,
+              lineHeight: 1.18,
               letterSpacing: '-0.03em',
               margin: 0,
-              color: 'var(--text)'
+              color: 'var(--text)',
+              wordBreak: 'break-word',
+              maxWidth: '100%'
             }}
           >
             Creative Engineering & <br />
@@ -193,11 +205,12 @@ export const LandingPage: FC = () => {
           {/* Subtitle */}
           <p
             style={{
-              fontSize: 'clamp(15px, 2vw, 18px)',
+              fontSize: 'clamp(14px, 2.2vw, 17px)',
               lineHeight: 1.6,
               color: 'var(--text-muted)',
-              maxWidth: '680px',
-              margin: '0 auto'
+              maxWidth: '660px',
+              margin: '0 auto',
+              padding: '0 6px'
             }}
           >
             Satu domain terpadu <strong>ronnproject.my.id</strong> untuk seluruh karya rekayasa software, autonomous WhatsApp bot, platform gamifikasi, dan siaran live radio 24/7.
@@ -205,20 +218,24 @@ export const LandingPage: FC = () => {
 
           {/* Hero Action Buttons */}
           <div
+            className="hero-cta-group"
             style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: '14px',
+              gap: '12px',
               flexWrap: 'wrap',
-              marginTop: '8px'
+              marginTop: '6px',
+              width: '100%',
+              boxSizing: 'border-box'
             }}
           >
             <a
               href="#ecosystem"
+              className="hero-cta-btn"
               style={{
-                height: '48px',
-                padding: '0 24px',
+                height: '46px',
+                padding: '0 22px',
                 borderRadius: 'var(--radius-md)',
                 background: 'var(--accent)',
                 color: '#0B0D10',
@@ -230,7 +247,8 @@ export const LandingPage: FC = () => {
                 textDecoration: 'none',
                 boxShadow: '0 4px 20px rgba(127, 209, 199, 0.3)',
                 transition: 'transform 0.15s ease, box-shadow 0.15s ease',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                boxSizing: 'border-box'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-2px)';
@@ -242,7 +260,7 @@ export const LandingPage: FC = () => {
               }}
             >
               <span>Jelajahi Subdomain & Proyek</span>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="12" y1="5" x2="12" y2="19"></line>
                 <polyline points="19 12 12 19 5 12"></polyline>
               </svg>
@@ -250,9 +268,10 @@ export const LandingPage: FC = () => {
 
             <Link
               to="/radio"
+              className="hero-cta-btn"
               style={{
-                height: '48px',
-                padding: '0 22px',
+                height: '46px',
+                padding: '0 20px',
                 borderRadius: 'var(--radius-md)',
                 background: 'var(--surface)',
                 border: '1px solid var(--border-strong)',
@@ -264,7 +283,8 @@ export const LandingPage: FC = () => {
                 gap: '8px',
                 textDecoration: 'none',
                 transition: 'background-color 0.15s ease, border-color 0.15s ease, transform 0.15s ease',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                boxSizing: 'border-box'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = 'var(--surface-selected)';
@@ -286,9 +306,10 @@ export const LandingPage: FC = () => {
 
             <Link
               to="/commands"
+              className="hero-cta-btn"
               style={{
-                height: '48px',
-                padding: '0 20px',
+                height: '46px',
+                padding: '0 18px',
                 borderRadius: 'var(--radius-md)',
                 background: 'transparent',
                 border: '1px solid var(--border)',
@@ -300,7 +321,8 @@ export const LandingPage: FC = () => {
                 gap: '8px',
                 textDecoration: 'none',
                 transition: 'color 0.15s ease, border-color 0.15s ease',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                boxSizing: 'border-box'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.color = 'var(--text)';
@@ -321,13 +343,15 @@ export const LandingPage: FC = () => {
 
           {/* Quick HUD Stat Tiles Strip */}
           <div
+            className="hero-stats-grid"
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
-              gap: '12px',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+              gap: '10px',
               width: '100%',
               maxWidth: '820px',
-              marginTop: '28px'
+              marginTop: '22px',
+              boxSizing: 'border-box'
             }}
           >
             {[
@@ -338,8 +362,9 @@ export const LandingPage: FC = () => {
             ].map((stat, i) => (
               <div
                 key={i}
+                className="hero-stat-card"
                 style={{
-                  padding: '14px 16px',
+                  padding: '12px 14px',
                   borderRadius: 'var(--radius-md)',
                   background: 'rgba(18, 22, 27, 0.75)',
                   border: '1px solid var(--border)',
@@ -347,8 +372,10 @@ export const LandingPage: FC = () => {
                   textAlign: 'left',
                   display: 'flex',
                   flexDirection: 'column',
-                  gap: '4px',
-                  transition: 'border-color 0.2s ease, transform 0.2s ease'
+                  gap: '3px',
+                  transition: 'border-color 0.2s ease, transform 0.2s ease',
+                  minWidth: 0,
+                  boxSizing: 'border-box'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = 'var(--border-strong)';
@@ -359,13 +386,13 @@ export const LandingPage: FC = () => {
                   e.currentTarget.style.transform = 'translateY(0)';
                 }}
               >
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)', letterSpacing: '0.06em' }}>
+                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)', letterSpacing: '0.04em', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                   {stat.label}
                 </div>
-                <div style={{ fontFamily: 'var(--font-mono)', fontSize: '20px', fontWeight: 600, color: stat.color }}>
+                <div className="hero-stat-val" style={{ fontFamily: 'var(--font-mono)', fontSize: '19px', fontWeight: 600, color: stat.color }}>
                   {stat.value}
                 </div>
-                <div style={{ fontSize: '11px', color: 'var(--text-muted)' }}>
+                <div style={{ fontSize: '11px', color: 'var(--text-muted)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                   {stat.hint}
                 </div>
               </div>
@@ -377,20 +404,23 @@ export const LandingPage: FC = () => {
       {/* Section 01: Subdomains & Ecosystem Matrix */}
       <section
         id="ecosystem"
+        className="landing-section"
         style={{
           position: 'relative',
-          padding: '80px 24px',
+          padding: '70px 20px',
           maxWidth: '1240px',
           margin: '0 auto',
-          zIndex: 2
+          zIndex: 2,
+          boxSizing: 'border-box',
+          width: '100%'
         }}
       >
         {/* Section Header */}
-        <div style={{ marginBottom: '44px' }}>
+        <div style={{ marginBottom: '36px' }}>
           <div
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '12px',
+              fontSize: '11px',
               fontWeight: 600,
               letterSpacing: '0.12em',
               color: 'var(--accent)',
@@ -401,10 +431,10 @@ export const LandingPage: FC = () => {
           </div>
           <h2
             style={{
-              fontSize: 'clamp(26px, 4vw, 36px)',
+              fontSize: 'clamp(24px, 3.8vw, 34px)',
               fontWeight: 700,
               letterSpacing: '-0.02em',
-              margin: '0 0 12px 0',
+              margin: '0 0 10px 0',
               color: 'var(--text)'
             }}
           >
@@ -412,7 +442,7 @@ export const LandingPage: FC = () => {
           </h2>
           <p
             style={{
-              fontSize: '15px',
+              fontSize: '14px',
               color: 'var(--text-muted)',
               maxWidth: '640px',
               lineHeight: 1.6,
@@ -425,25 +455,31 @@ export const LandingPage: FC = () => {
 
         {/* Project Showcase Cards Grid */}
         <div
+          className="ecosystem-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-            gap: '20px'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 310px), 1fr))',
+            gap: '18px',
+            width: '100%',
+            boxSizing: 'border-box'
           }}
         >
           {/* Card 1: EnglishQuest Web */}
           <div
+            className="ecosystem-card"
             style={{
               borderRadius: 'var(--radius-lg)',
               background: 'var(--surface)',
               border: '1px solid var(--border)',
-              padding: '24px',
+              padding: '22px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              gap: '20px',
+              gap: '18px',
               position: 'relative',
               overflow: 'hidden',
+              boxSizing: 'border-box',
+              minWidth: 0,
               transition: 'border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease'
             }}
             onMouseEnter={(e) => {
@@ -458,12 +494,12 @@ export const LandingPage: FC = () => {
             }}
           >
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px', gap: '8px', flexWrap: 'wrap' }}>
                 <span
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '6px',
+                    gap: '5px',
                     padding: '3px 8px',
                     borderRadius: '4px',
                     background: 'rgba(123, 200, 160, 0.1)',
@@ -473,7 +509,7 @@ export const LandingPage: FC = () => {
                     fontFamily: 'var(--font-mono)'
                   }}
                 >
-                  <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--success)' }} />
+                  <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--success)', flexShrink: 0 }} />
                   SUBDOMAIN ACTIVE
                 </span>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)' }}>
@@ -481,10 +517,10 @@ export const LandingPage: FC = () => {
                 </span>
               </div>
 
-              <h3 style={{ fontSize: '20px', fontWeight: 600, margin: '0 0 10px 0', color: 'var(--text)' }}>
+              <h3 style={{ fontSize: '19px', fontWeight: 600, margin: '0 0 8px 0', color: 'var(--text)' }}>
                 EnglishQuest Web
               </h3>
-              <p style={{ fontSize: '14px', lineHeight: 1.6, color: 'var(--text-muted)', margin: '0 0 16px 0' }}>
+              <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--text-muted)', margin: '0 0 14px 0' }}>
                 Platform petualangan belajar bahasa Inggris interaktif dengan quest adaptif, tantangan kuis harian, dan sistem progres gamifikasi imersif.
               </p>
 
@@ -494,16 +530,20 @@ export const LandingPage: FC = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  padding: '8px 12px',
+                  padding: '8px 10px',
                   borderRadius: 'var(--radius-sm)',
                   background: 'var(--surface-inset)',
                   border: '1px solid var(--border)',
                   fontFamily: 'var(--font-mono)',
                   fontSize: '12px',
-                  color: 'var(--text)'
+                  color: 'var(--text)',
+                  gap: '8px',
+                  minWidth: 0
                 }}
               >
-                <span>equest.ronnproject.my.id</span>
+                <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', minWidth: 0, flex: 1 }}>
+                  equest.ronnproject.my.id
+                </span>
                 <button
                   onClick={() => handleCopy('https://equest.ronnproject.my.id')}
                   title="Salin alamat subdomain"
@@ -513,7 +553,8 @@ export const LandingPage: FC = () => {
                     fontSize: '11px',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '4px'
+                    gap: '4px',
+                    flexShrink: 0
                   }}
                 >
                   {copiedDomain === 'https://equest.ronnproject.my.id' ? 'Tersalin ✓' : 'Salin'}
@@ -528,7 +569,7 @@ export const LandingPage: FC = () => {
                 rel="noreferrer"
                 style={{
                   flex: 1,
-                  height: '40px',
+                  height: '42px',
                   borderRadius: 'var(--radius-md)',
                   background: 'var(--accent)',
                   color: '#0B0D10',
@@ -539,7 +580,8 @@ export const LandingPage: FC = () => {
                   justifyContent: 'center',
                   gap: '6px',
                   textDecoration: 'none',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  boxSizing: 'border-box'
                 }}
               >
                 <span>Buka EnglishQuest</span>
@@ -554,17 +596,20 @@ export const LandingPage: FC = () => {
 
           {/* Card 2: WABOT 2.0 Assistant */}
           <div
+            className="ecosystem-card"
             style={{
               borderRadius: 'var(--radius-lg)',
               background: 'var(--surface)',
               border: '1px solid var(--border)',
-              padding: '24px',
+              padding: '22px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              gap: '20px',
+              gap: '18px',
               position: 'relative',
               overflow: 'hidden',
+              boxSizing: 'border-box',
+              minWidth: 0,
               transition: 'border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease'
             }}
             onMouseEnter={(e) => {
@@ -579,12 +624,12 @@ export const LandingPage: FC = () => {
             }}
           >
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px', gap: '8px', flexWrap: 'wrap' }}>
                 <span
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '6px',
+                    gap: '5px',
                     padding: '3px 8px',
                     borderRadius: '4px',
                     background: 'rgba(127, 209, 199, 0.1)',
@@ -594,7 +639,7 @@ export const LandingPage: FC = () => {
                     fontFamily: 'var(--font-mono)'
                   }}
                 >
-                  <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--accent)' }} />
+                  <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--accent)', flexShrink: 0 }} />
                   CORE ENGINE v6.3.0
                 </span>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)' }}>
@@ -602,11 +647,11 @@ export const LandingPage: FC = () => {
                 </span>
               </div>
 
-              <h3 style={{ fontSize: '20px', fontWeight: 600, margin: '0 0 10px 0', color: 'var(--text)' }}>
+              <h3 style={{ fontSize: '19px', fontWeight: 600, margin: '0 0 8px 0', color: 'var(--text)' }}>
                 WABOT 2.0 Assistant
               </h3>
-              <p style={{ fontSize: '14px', lineHeight: 1.6, color: 'var(--text-muted)', margin: '0 0 16px 0' }}>
-                WhatsApp assistant otonom dengan sistem Dynamic Skills, router AI multi-level (Regex, Gemini Flash, Deepmind), proteksi grup anti-link/anti-toxic, dan telemetry.
+              <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--text-muted)', margin: '0 0 14px 0' }}>
+                WhatsApp assistant otonom dengan Dynamic Skills, router AI multi-level (Regex, Gemini Flash, Deepmind), proteksi grup anti-link/anti-toxic, dan telemetry.
               </p>
 
               {/* Subdomain pill */}
@@ -615,17 +660,21 @@ export const LandingPage: FC = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  padding: '8px 12px',
+                  padding: '8px 10px',
                   borderRadius: 'var(--radius-sm)',
                   background: 'var(--surface-inset)',
                   border: '1px solid var(--border)',
                   fontFamily: 'var(--font-mono)',
                   fontSize: '12px',
-                  color: 'var(--text)'
+                  color: 'var(--text)',
+                  gap: '8px',
+                  minWidth: 0
                 }}
               >
-                <span>wabot.ronnproject.my.id</span>
-                <span style={{ fontSize: '11px', color: 'var(--text-dim)' }}>Subdomain Ready</span>
+                <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', minWidth: 0, flex: 1 }}>
+                  wabot.ronnproject.my.id
+                </span>
+                <span style={{ fontSize: '11px', color: 'var(--text-dim)', flexShrink: 0 }}>Subdomain Ready</span>
               </div>
             </div>
 
@@ -634,7 +683,7 @@ export const LandingPage: FC = () => {
                 to="/commands"
                 style={{
                   flex: 1,
-                  height: '40px',
+                  height: '42px',
                   borderRadius: 'var(--radius-md)',
                   background: 'var(--surface-selected)',
                   border: '1px solid var(--border-strong)',
@@ -646,7 +695,8 @@ export const LandingPage: FC = () => {
                   justifyContent: 'center',
                   gap: '6px',
                   textDecoration: 'none',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  boxSizing: 'border-box'
                 }}
               >
                 <span>Katalog 48+ Perintah</span>
@@ -659,17 +709,20 @@ export const LandingPage: FC = () => {
 
           {/* Card 3: ronn.ai Live Radio */}
           <div
+            className="ecosystem-card"
             style={{
               borderRadius: 'var(--radius-lg)',
               background: 'var(--surface)',
               border: '1px solid var(--border)',
-              padding: '24px',
+              padding: '22px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              gap: '20px',
+              gap: '18px',
               position: 'relative',
               overflow: 'hidden',
+              boxSizing: 'border-box',
+              minWidth: 0,
               transition: 'border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease'
             }}
             onMouseEnter={(e) => {
@@ -684,12 +737,12 @@ export const LandingPage: FC = () => {
             }}
           >
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px', gap: '8px', flexWrap: 'wrap' }}>
                 <span
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '6px',
+                    gap: '5px',
                     padding: '3px 8px',
                     borderRadius: '4px',
                     background: 'rgba(224, 180, 106, 0.1)',
@@ -699,7 +752,7 @@ export const LandingPage: FC = () => {
                     fontFamily: 'var(--font-mono)'
                   }}
                 >
-                  <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--warning)' }} />
+                  <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--warning)', flexShrink: 0 }} />
                   24/7 ON AIR
                 </span>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)' }}>
@@ -707,10 +760,10 @@ export const LandingPage: FC = () => {
                 </span>
               </div>
 
-              <h3 style={{ fontSize: '20px', fontWeight: 600, margin: '0 0 10px 0', color: 'var(--text)' }}>
+              <h3 style={{ fontSize: '19px', fontWeight: 600, margin: '0 0 8px 0', color: 'var(--text)' }}>
                 Live Radio Hub
               </h3>
-              <p style={{ fontSize: '14px', lineHeight: 1.6, color: 'var(--text-muted)', margin: '0 0 16px 0' }}>
+              <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--text-muted)', margin: '0 0 14px 0' }}>
                 Booth siaran radio lo-fi & indie nonstop dengan visualizer 64-bar real-time, antrean request lagu interaktif, dan mini-player persisten.
               </p>
 
@@ -720,17 +773,21 @@ export const LandingPage: FC = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  padding: '8px 12px',
+                  padding: '8px 10px',
                   borderRadius: 'var(--radius-sm)',
                   background: 'var(--surface-inset)',
                   border: '1px solid var(--border)',
                   fontFamily: 'var(--font-mono)',
                   fontSize: '12px',
-                  color: 'var(--text)'
+                  color: 'var(--text)',
+                  gap: '8px',
+                  minWidth: 0
                 }}
               >
-                <span>ronnproject.my.id/radio</span>
-                <span style={{ fontSize: '11px', color: 'var(--accent)' }}>Live Stream</span>
+                <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', minWidth: 0, flex: 1 }}>
+                  ronnproject.my.id/radio
+                </span>
+                <span style={{ fontSize: '11px', color: 'var(--accent)', flexShrink: 0 }}>Live Stream</span>
               </div>
             </div>
 
@@ -739,7 +796,7 @@ export const LandingPage: FC = () => {
                 to="/radio"
                 style={{
                   flex: 1,
-                  height: '40px',
+                  height: '42px',
                   borderRadius: 'var(--radius-md)',
                   background: 'var(--surface-selected)',
                   border: '1px solid var(--border-strong)',
@@ -751,7 +808,8 @@ export const LandingPage: FC = () => {
                   justifyContent: 'center',
                   gap: '6px',
                   textDecoration: 'none',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  boxSizing: 'border-box'
                 }}
               >
                 <span>Masuk Studio Radio</span>
@@ -764,17 +822,20 @@ export const LandingPage: FC = () => {
 
           {/* Card 4: System Telemetry */}
           <div
+            className="ecosystem-card"
             style={{
               borderRadius: 'var(--radius-lg)',
               background: 'var(--surface)',
               border: '1px solid var(--border)',
-              padding: '24px',
+              padding: '22px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              gap: '20px',
+              gap: '18px',
               position: 'relative',
               overflow: 'hidden',
+              boxSizing: 'border-box',
+              minWidth: 0,
               transition: 'border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease'
             }}
             onMouseEnter={(e) => {
@@ -789,12 +850,12 @@ export const LandingPage: FC = () => {
             }}
           >
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px', gap: '8px', flexWrap: 'wrap' }}>
                 <span
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '6px',
+                    gap: '5px',
                     padding: '3px 8px',
                     borderRadius: '4px',
                     background: 'rgba(201, 182, 255, 0.1)',
@@ -804,19 +865,19 @@ export const LandingPage: FC = () => {
                     fontFamily: 'var(--font-mono)'
                   }}
                 >
-                  <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#C9B6FF' }} />
+                  <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: '#C9B6FF', flexShrink: 0 }} />
                   OBSERVATORY
                 </span>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)' }}>
-                  DIAGNOSTICS · HEALTH
+                  DIAGNOSTICS
                 </span>
               </div>
 
-              <h3 style={{ fontSize: '20px', fontWeight: 600, margin: '0 0 10px 0', color: 'var(--text)' }}>
+              <h3 style={{ fontSize: '19px', fontWeight: 600, margin: '0 0 8px 0', color: 'var(--text)' }}>
                 Mission Control Telemetry
               </h3>
-              <p style={{ fontSize: '14px', lineHeight: 1.6, color: 'var(--text-muted)', margin: '0 0 16px 0' }}>
-                Dashboard pemantauan resource server, latensi AI per-tingkat, sparklines CPU/RAM, status WhatsApp session live, dan log audit otonom.
+              <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--text-muted)', margin: '0 0 14px 0' }}>
+                Monitoring performa server komprehensif: CPU & RAM sparklines, distribusi tier AI routing, live session WhatsApp status, dan terminal ring-buffer logs.
               </p>
 
               {/* Subdomain pill */}
@@ -825,17 +886,21 @@ export const LandingPage: FC = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  padding: '8px 12px',
+                  padding: '8px 10px',
                   borderRadius: 'var(--radius-sm)',
                   background: 'var(--surface-inset)',
                   border: '1px solid var(--border)',
                   fontFamily: 'var(--font-mono)',
                   fontSize: '12px',
-                  color: 'var(--text)'
+                  color: 'var(--text)',
+                  gap: '8px',
+                  minWidth: 0
                 }}
               >
-                <span>/owner/telemetry</span>
-                <span style={{ fontSize: '11px', color: 'var(--text-dim)' }}>Protected Route</span>
+                <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', minWidth: 0, flex: 1 }}>
+                  /owner/telemetry
+                </span>
+                <span style={{ fontSize: '11px', color: 'var(--text-dim)', flexShrink: 0 }}>Protected</span>
               </div>
             </div>
 
@@ -844,7 +909,7 @@ export const LandingPage: FC = () => {
                 to="/owner/telemetry"
                 style={{
                   flex: 1,
-                  height: '40px',
+                  height: '42px',
                   borderRadius: 'var(--radius-md)',
                   background: 'var(--surface-selected)',
                   border: '1px solid var(--border-strong)',
@@ -856,7 +921,8 @@ export const LandingPage: FC = () => {
                   justifyContent: 'center',
                   gap: '6px',
                   textDecoration: 'none',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  boxSizing: 'border-box'
                 }}
               >
                 <span>Akses Telemetry</span>
@@ -869,17 +935,20 @@ export const LandingPage: FC = () => {
 
           {/* Card 5: AI Center & Dynamic Skills */}
           <div
+            className="ecosystem-card"
             style={{
               borderRadius: 'var(--radius-lg)',
               background: 'var(--surface)',
               border: '1px solid var(--border)',
-              padding: '24px',
+              padding: '22px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              gap: '20px',
+              gap: '18px',
               position: 'relative',
               overflow: 'hidden',
+              boxSizing: 'border-box',
+              minWidth: 0,
               transition: 'border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease'
             }}
             onMouseEnter={(e) => {
@@ -894,12 +963,12 @@ export const LandingPage: FC = () => {
             }}
           >
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px', gap: '8px', flexWrap: 'wrap' }}>
                 <span
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '6px',
+                    gap: '5px',
                     padding: '3px 8px',
                     borderRadius: '4px',
                     background: 'rgba(127, 209, 199, 0.1)',
@@ -909,18 +978,18 @@ export const LandingPage: FC = () => {
                     fontFamily: 'var(--font-mono)'
                   }}
                 >
-                  <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--accent)' }} />
+                  <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--accent)', flexShrink: 0 }} />
                   AGENTIC SYSTEM
                 </span>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)' }}>
-                  DYNAMIC SKILLS
+                  SKILLS RUNTIME
                 </span>
               </div>
 
-              <h3 style={{ fontSize: '20px', fontWeight: 600, margin: '0 0 10px 0', color: 'var(--text)' }}>
+              <h3 style={{ fontSize: '19px', fontWeight: 600, margin: '0 0 8px 0', color: 'var(--text)' }}>
                 AI Center & Skills Runtime
               </h3>
-              <p style={{ fontSize: '14px', lineHeight: 1.6, color: 'var(--text-muted)', margin: '0 0 16px 0' }}>
+              <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--text-muted)', margin: '0 0 14px 0' }}>
                 Modul injeksi kemampuan dinamis bot secara real-time tanpa henti, multi-agent coordination, dan integrasi LLM multimodal.
               </p>
 
@@ -930,17 +999,21 @@ export const LandingPage: FC = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  padding: '8px 12px',
+                  padding: '8px 10px',
                   borderRadius: 'var(--radius-sm)',
                   background: 'var(--surface-inset)',
                   border: '1px solid var(--border)',
                   fontFamily: 'var(--font-mono)',
                   fontSize: '12px',
-                  color: 'var(--text)'
+                  color: 'var(--text)',
+                  gap: '8px',
+                  minWidth: 0
                 }}
               >
-                <span>/owner/ai</span>
-                <span style={{ fontSize: '11px', color: 'var(--accent)' }}>Live Injection</span>
+                <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', minWidth: 0, flex: 1 }}>
+                  /owner/ai
+                </span>
+                <span style={{ fontSize: '11px', color: 'var(--accent)', flexShrink: 0 }}>Live Injection</span>
               </div>
             </div>
 
@@ -949,7 +1022,7 @@ export const LandingPage: FC = () => {
                 to="/owner/ai"
                 style={{
                   flex: 1,
-                  height: '40px',
+                  height: '42px',
                   borderRadius: 'var(--radius-md)',
                   background: 'var(--surface-selected)',
                   border: '1px solid var(--border-strong)',
@@ -961,7 +1034,8 @@ export const LandingPage: FC = () => {
                   justifyContent: 'center',
                   gap: '6px',
                   textDecoration: 'none',
-                  cursor: 'pointer'
+                  cursor: 'pointer',
+                  boxSizing: 'border-box'
                 }}
               >
                 <span>Buka AI Center</span>
@@ -974,25 +1048,28 @@ export const LandingPage: FC = () => {
 
           {/* Card 6: Upcoming Labs */}
           <div
+            className="ecosystem-card"
             style={{
               borderRadius: 'var(--radius-lg)',
               background: 'rgba(18, 22, 27, 0.45)',
               border: '1px dashed var(--border-strong)',
-              padding: '24px',
+              padding: '22px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              gap: '20px',
-              position: 'relative'
+              gap: '18px',
+              position: 'relative',
+              boxSizing: 'border-box',
+              minWidth: 0
             }}
           >
             <div>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '14px' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '12px', gap: '8px', flexWrap: 'wrap' }}>
                 <span
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '6px',
+                    gap: '5px',
                     padding: '3px 8px',
                     borderRadius: '4px',
                     background: 'rgba(255, 255, 255, 0.05)',
@@ -1002,7 +1079,7 @@ export const LandingPage: FC = () => {
                     fontFamily: 'var(--font-mono)'
                   }}
                 >
-                  <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--text-dim)' }} />
+                  <span style={{ width: '5px', height: '5px', borderRadius: '50%', background: 'var(--text-dim)', flexShrink: 0 }} />
                   INCUBATING
                 </span>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)' }}>
@@ -1010,10 +1087,10 @@ export const LandingPage: FC = () => {
                 </span>
               </div>
 
-              <h3 style={{ fontSize: '20px', fontWeight: 600, margin: '0 0 10px 0', color: 'var(--text-muted)' }}>
+              <h3 style={{ fontSize: '19px', fontWeight: 600, margin: '0 0 8px 0', color: 'var(--text-muted)' }}>
                 Ronn Labs & Sandbox
               </h3>
-              <p style={{ fontSize: '14px', lineHeight: 1.6, color: 'var(--text-dim)', margin: '0 0 16px 0' }}>
+              <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--text-dim)', margin: '0 0 14px 0' }}>
                 Ruang inkubasi untuk proyek-proyek eksperimental baru: speech synthesis agents, tools otomatisasi web, dan prototipe API berikutnya.
               </p>
 
@@ -1022,17 +1099,21 @@ export const LandingPage: FC = () => {
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'space-between',
-                  padding: '8px 12px',
+                  padding: '8px 10px',
                   borderRadius: 'var(--radius-sm)',
                   background: 'rgba(0, 0, 0, 0.3)',
                   border: '1px solid var(--border)',
                   fontFamily: 'var(--font-mono)',
                   fontSize: '12px',
-                  color: 'var(--text-dim)'
+                  color: 'var(--text-dim)',
+                  gap: '8px',
+                  minWidth: 0
                 }}
               >
-                <span>lab.ronnproject.my.id</span>
-                <span style={{ fontSize: '11px' }}>Pipeline Ready</span>
+                <span style={{ overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap', minWidth: 0, flex: 1 }}>
+                  lab.ronnproject.my.id
+                </span>
+                <span style={{ fontSize: '11px', flexShrink: 0 }}>Pipeline Ready</span>
               </div>
             </div>
 
@@ -1040,7 +1121,7 @@ export const LandingPage: FC = () => {
               <div
                 style={{
                   flex: 1,
-                  height: '40px',
+                  height: '42px',
                   borderRadius: 'var(--radius-md)',
                   background: 'transparent',
                   border: '1px solid var(--border)',
@@ -1049,7 +1130,8 @@ export const LandingPage: FC = () => {
                   fontSize: '13px',
                   display: 'inline-flex',
                   alignItems: 'center',
-                  justifyContent: 'center'
+                  justifyContent: 'center',
+                  boxSizing: 'border-box'
                 }}
               >
                 Dalam Tahap Eksplorasi
@@ -1062,19 +1144,22 @@ export const LandingPage: FC = () => {
       {/* Section 02: Interactive Live Radio Player Showcase */}
       <section
         id="radio-station"
+        className="landing-section"
         style={{
           position: 'relative',
-          padding: '80px 24px',
+          padding: '70px 20px',
           maxWidth: '1240px',
           margin: '0 auto',
-          zIndex: 2
+          zIndex: 2,
+          boxSizing: 'border-box',
+          width: '100%'
         }}
       >
-        <div style={{ marginBottom: '32px' }}>
+        <div style={{ marginBottom: '28px' }}>
           <div
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '12px',
+              fontSize: '11px',
               fontWeight: 600,
               letterSpacing: '0.12em',
               color: 'var(--accent)',
@@ -1085,10 +1170,10 @@ export const LandingPage: FC = () => {
           </div>
           <h2
             style={{
-              fontSize: 'clamp(26px, 4vw, 36px)',
+              fontSize: 'clamp(24px, 3.8vw, 34px)',
               fontWeight: 700,
               letterSpacing: '-0.02em',
-              margin: '0 0 12px 0',
+              margin: '0 0 10px 0',
               color: 'var(--text)'
             }}
           >
@@ -1096,7 +1181,7 @@ export const LandingPage: FC = () => {
           </h2>
           <p
             style={{
-              fontSize: '15px',
+              fontSize: '14px',
               color: 'var(--text-muted)',
               maxWidth: '640px',
               lineHeight: 1.6,
@@ -1114,19 +1199,22 @@ export const LandingPage: FC = () => {
       {/* Section 03: Interactive Mission Control Terminal */}
       <section
         id="terminal"
+        className="landing-section"
         style={{
           position: 'relative',
-          padding: '80px 24px',
+          padding: '70px 20px',
           maxWidth: '1240px',
           margin: '0 auto',
-          zIndex: 2
+          zIndex: 2,
+          boxSizing: 'border-box',
+          width: '100%'
         }}
       >
-        <div style={{ marginBottom: '32px' }}>
+        <div style={{ marginBottom: '28px' }}>
           <div
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '12px',
+              fontSize: '11px',
               fontWeight: 600,
               letterSpacing: '0.12em',
               color: 'var(--accent)',
@@ -1137,10 +1225,10 @@ export const LandingPage: FC = () => {
           </div>
           <h2
             style={{
-              fontSize: 'clamp(26px, 4vw, 36px)',
+              fontSize: 'clamp(24px, 3.8vw, 34px)',
               fontWeight: 700,
               letterSpacing: '-0.02em',
-              margin: '0 0 12px 0',
+              margin: '0 0 10px 0',
               color: 'var(--text)'
             }}
           >
@@ -1148,7 +1236,7 @@ export const LandingPage: FC = () => {
           </h2>
           <p
             style={{
-              fontSize: '15px',
+              fontSize: '14px',
               color: 'var(--text-muted)',
               maxWidth: '640px',
               lineHeight: 1.6,
@@ -1166,19 +1254,22 @@ export const LandingPage: FC = () => {
       {/* Section 04: Architecture & Engineering Pillars */}
       <section
         id="architecture"
+        className="landing-section"
         style={{
           position: 'relative',
-          padding: '80px 24px',
+          padding: '70px 20px',
           maxWidth: '1240px',
           margin: '0 auto',
-          zIndex: 2
+          zIndex: 2,
+          boxSizing: 'border-box',
+          width: '100%'
         }}
       >
-        <div style={{ marginBottom: '40px' }}>
+        <div style={{ marginBottom: '36px' }}>
           <div
             style={{
               fontFamily: 'var(--font-mono)',
-              fontSize: '12px',
+              fontSize: '11px',
               fontWeight: 600,
               letterSpacing: '0.12em',
               color: 'var(--accent)',
@@ -1189,10 +1280,10 @@ export const LandingPage: FC = () => {
           </div>
           <h2
             style={{
-              fontSize: 'clamp(26px, 4vw, 36px)',
+              fontSize: 'clamp(24px, 3.8vw, 34px)',
               fontWeight: 700,
               letterSpacing: '-0.02em',
-              margin: '0 0 12px 0',
+              margin: '0 0 10px 0',
               color: 'var(--text)'
             }}
           >
@@ -1200,7 +1291,7 @@ export const LandingPage: FC = () => {
           </h2>
           <p
             style={{
-              fontSize: '15px',
+              fontSize: '14px',
               color: 'var(--text-muted)',
               maxWidth: '640px',
               lineHeight: 1.6,
@@ -1212,35 +1303,42 @@ export const LandingPage: FC = () => {
         </div>
 
         <div
+          className="architecture-grid"
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-            gap: '20px'
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+            gap: '18px',
+            width: '100%',
+            boxSizing: 'border-box'
           }}
         >
           {/* Pillar 1 */}
           <div
+            className="architecture-card"
             style={{
-              padding: '24px',
+              padding: '22px',
               borderRadius: 'var(--radius-lg)',
               background: 'var(--surface)',
               border: '1px solid var(--border)',
               display: 'flex',
               flexDirection: 'column',
-              gap: '12px'
+              gap: '12px',
+              boxSizing: 'border-box',
+              minWidth: 0
             }}
           >
             <div
               style={{
-                width: '40px',
-                height: '40px',
+                width: '38px',
+                height: '38px',
                 borderRadius: '8px',
                 background: 'var(--surface-inset)',
                 border: '1px solid var(--border)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: 'var(--accent)'
+                color: 'var(--accent)',
+                flexShrink: 0
               }}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -1248,84 +1346,92 @@ export const LandingPage: FC = () => {
                 <polygon points="12 8 8 12 12 16 12 8"></polygon>
               </svg>
             </div>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, margin: 0, color: 'var(--text)' }}>
+            <h3 style={{ fontSize: '17px', fontWeight: 600, margin: 0, color: 'var(--text)' }}>
               Multi-Tier AI Routing
             </h3>
-            <p style={{ fontSize: '14px', lineHeight: 1.6, color: 'var(--text-muted)', margin: 0 }}>
+            <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--text-muted)', margin: 0 }}>
               Routing otomatis permintaan user: Tier 0 untuk pola deterministik (&lt;5ms), Tier 1 Flash untuk pemrosesan cepat (~150ms), dan Tier 2 Reasoning untuk penalaran kompleks.
             </p>
           </div>
 
           {/* Pillar 2 */}
           <div
+            className="architecture-card"
             style={{
-              padding: '24px',
+              padding: '22px',
               borderRadius: 'var(--radius-lg)',
               background: 'var(--surface)',
               border: '1px solid var(--border)',
               display: 'flex',
               flexDirection: 'column',
-              gap: '12px'
+              gap: '12px',
+              boxSizing: 'border-box',
+              minWidth: 0
             }}
           >
             <div
               style={{
-                width: '40px',
-                height: '40px',
+                width: '38px',
+                height: '38px',
                 borderRadius: '8px',
                 background: 'var(--surface-inset)',
                 border: '1px solid var(--border)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: 'var(--success)'
+                color: 'var(--success)',
+                flexShrink: 0
               }}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
               </svg>
             </div>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, margin: 0, color: 'var(--text)' }}>
+            <h3 style={{ fontSize: '17px', fontWeight: 600, margin: 0, color: 'var(--text)' }}>
               Subdomain Edge Networking
             </h3>
-            <p style={{ fontSize: '14px', lineHeight: 1.6, color: 'var(--text-muted)', margin: 0 }}>
-              Setiap subdomain (equest, wabot, radio) diarahkan secara cerdas melalui DNS Anycast & Edge CDN Vercel/Cloudflare dengan enkripsi SSL otomatis dan propagasi instan.
+            <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--text-muted)', margin: 0 }}>
+              Setiap subdomain (equest, wabot, radio) diarahkan secara cerdas melalui DNS Anycast & Edge CDN Vercel dengan enkripsi SSL otomatis dan propagasi instan.
             </p>
           </div>
 
           {/* Pillar 3 */}
           <div
+            className="architecture-card"
             style={{
-              padding: '24px',
+              padding: '22px',
               borderRadius: 'var(--radius-lg)',
               background: 'var(--surface)',
               border: '1px solid var(--border)',
               display: 'flex',
               flexDirection: 'column',
-              gap: '12px'
+              gap: '12px',
+              boxSizing: 'border-box',
+              minWidth: 0
             }}
           >
             <div
               style={{
-                width: '40px',
-                height: '40px',
+                width: '38px',
+                height: '38px',
                 borderRadius: '8px',
                 background: 'var(--surface-inset)',
                 border: '1px solid var(--border)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: 'var(--warning)'
+                color: 'var(--warning)',
+                flexShrink: 0
               }}
             >
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
               </svg>
             </div>
-            <h3 style={{ fontSize: '18px', fontWeight: 600, margin: 0, color: 'var(--text)' }}>
+            <h3 style={{ fontSize: '17px', fontWeight: 600, margin: 0, color: 'var(--text)' }}>
               GPU Compositor Motion
             </h3>
-            <p style={{ fontSize: '14px', lineHeight: 1.6, color: 'var(--text-muted)', margin: 0 }}>
+            <p style={{ fontSize: '13px', lineHeight: 1.6, color: 'var(--text-muted)', margin: 0 }}>
               Semua animasi motion dan efek visual dijalankan murni pada thread GPU compositor (opacity, transform, canvas) sehingga sangat halus 60 FPS dan ringan pada memori handphone.
             </p>
           </div>
@@ -1335,13 +1441,16 @@ export const LandingPage: FC = () => {
       {/* Section 05: Technology Stack Strip */}
       <section
         id="specs"
+        className="landing-section"
         style={{
           position: 'relative',
-          padding: '60px 24px',
+          padding: '50px 20px',
           maxWidth: '1240px',
           margin: '0 auto',
           borderTop: '1px solid var(--border)',
-          zIndex: 2
+          zIndex: 2,
+          boxSizing: 'border-box',
+          width: '100%'
         }}
       >
         <div
@@ -1350,10 +1459,10 @@ export const LandingPage: FC = () => {
             flexDirection: 'column',
             alignItems: 'center',
             textAlign: 'center',
-            gap: '20px'
+            gap: '16px'
           }}
         >
-          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', letterSpacing: '0.12em', color: 'var(--text-dim)' }}>
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', letterSpacing: '0.12em', color: 'var(--text-dim)' }}>
             POWERED BY MODERN WEB STACK & CLOUD INFRASTRUCTURE
           </div>
 
@@ -1362,7 +1471,7 @@ export const LandingPage: FC = () => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              gap: '12px',
+              gap: '8px',
               flexWrap: 'wrap'
             }}
           >
@@ -1382,8 +1491,8 @@ export const LandingPage: FC = () => {
                 key={tech}
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '12px',
-                  padding: '6px 12px',
+                  fontSize: '11px',
+                  padding: '5px 10px',
                   borderRadius: 'var(--radius-sm)',
                   background: 'var(--surface)',
                   border: '1px solid var(--border)',
@@ -1399,15 +1508,19 @@ export const LandingPage: FC = () => {
 
       {/* Footer */}
       <footer
+        className="landing-footer"
         style={{
           borderTop: '1px solid var(--border)',
-          padding: '40px 24px',
+          padding: '36px 20px',
           background: 'var(--surface-inset)',
           position: 'relative',
-          zIndex: 2
+          zIndex: 2,
+          boxSizing: 'border-box',
+          width: '100%'
         }}
       >
         <div
+          className="landing-footer-inner"
           style={{
             maxWidth: '1240px',
             margin: '0 auto',
@@ -1415,20 +1528,29 @@ export const LandingPage: FC = () => {
             alignItems: 'center',
             justifyContent: 'space-between',
             flexWrap: 'wrap',
-            gap: '20px'
+            gap: '16px',
+            boxSizing: 'border-box',
+            width: '100%'
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-            <span style={{ fontWeight: 700, fontSize: '16px', letterSpacing: '-0.02em' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <div style={{ fontWeight: 700, fontSize: '15px', letterSpacing: '-0.02em' }}>
               ronn<span style={{ color: 'var(--accent)' }}>project</span>.my.id
-            </span>
-            <span style={{ color: 'var(--text-dim)' }}>•</span>
-            <span style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
+            </div>
+            <div style={{ fontSize: '12px', color: 'var(--text-muted)' }}>
               © 2026 Ronn Creative Engineering. Designed with precision.
-            </span>
+            </div>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <div
+            className="landing-footer-links"
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '14px',
+              flexWrap: 'wrap'
+            }}
+          >
             <a
               href="#ecosystem"
               style={{ fontSize: '13px', color: 'var(--text-muted)', textDecoration: 'none' }}

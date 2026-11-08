@@ -124,7 +124,10 @@ export const InteractiveTerminal: FC = () => {
         background: 'var(--surface-inset)',
         border: '1px solid var(--border)',
         overflow: 'hidden',
-        boxShadow: '0 20px 48px -12px rgba(0, 0, 0, 0.75)'
+        boxShadow: '0 20px 48px -12px rgba(0, 0, 0, 0.75)',
+        width: '100%',
+        maxWidth: '100%',
+        boxSizing: 'border-box'
       }}
     >
       {/* Terminal Title Bar */}
@@ -133,30 +136,34 @@ export const InteractiveTerminal: FC = () => {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          padding: '10px 16px',
+          padding: '10px 14px',
           background: 'var(--surface)',
-          borderBottom: '1px solid var(--border)'
+          borderBottom: '1px solid var(--border)',
+          gap: '8px'
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div style={{ display: 'flex', gap: '6px' }}>
-            <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#E8909A' }} />
-            <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#E0B46A' }} />
-            <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: '#7BC8A0' }} />
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', minWidth: 0 }}>
+          <div style={{ display: 'flex', gap: '5px', flexShrink: 0 }}>
+            <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#E8909A' }} />
+            <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#E0B46A' }} />
+            <span style={{ width: '9px', height: '9px', borderRadius: '50%', background: '#7BC8A0' }} />
           </div>
           <span
             style={{
               fontFamily: 'var(--font-mono)',
               fontSize: '11px',
               color: 'var(--text-muted)',
-              marginLeft: '8px'
+              whiteSpace: 'nowrap',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis'
             }}
           >
-            guest@ronnproject: ~ (bash / interactive)
+            guest@ronnproject:~
+            <span className="terminal-title-sub"> (bash / interactive)</span>
           </span>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flexShrink: 0 }}>
           <span
             style={{
               width: '6px',
@@ -167,7 +174,7 @@ export const InteractiveTerminal: FC = () => {
             }}
           />
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)' }}>
-            NODE READY
+            READY
           </span>
         </div>
       </div>
@@ -177,16 +184,17 @@ export const InteractiveTerminal: FC = () => {
         style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '8px',
-          padding: '10px 16px',
+          gap: '6px',
+          padding: '8px 12px',
           background: 'rgba(255, 255, 255, 0.015)',
           borderBottom: '1px solid var(--border)',
           overflowX: 'auto',
-          whiteSpace: 'nowrap'
+          whiteSpace: 'nowrap',
+          WebkitOverflowScrolling: 'touch'
         }}
       >
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--text-dim)' }}>
-          Quick commands:
+        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '10px', color: 'var(--text-dim)', flexShrink: 0 }}>
+          Quick:
         </span>
         {['help', 'projects', 'equest', 'wabot', 'radio', 'stats', 'clear'].map((cmd) => (
           <button
@@ -201,7 +209,8 @@ export const InteractiveTerminal: FC = () => {
               border: '1px solid var(--border-strong)',
               color: 'var(--text-muted)',
               cursor: 'pointer',
-              transition: 'color 0.15s ease, border-color 0.15s ease'
+              transition: 'color 0.15s ease, border-color 0.15s ease',
+              flexShrink: 0
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.color = 'var(--accent)';
@@ -220,22 +229,23 @@ export const InteractiveTerminal: FC = () => {
       {/* Terminal Output Area */}
       <div
         style={{
-          height: '240px',
+          height: '210px',
           overflowY: 'auto',
-          padding: '16px',
+          padding: '14px',
           fontFamily: 'var(--font-mono)',
           fontSize: '12px',
           lineHeight: '1.6',
           display: 'flex',
           flexDirection: 'column',
-          gap: '4px'
+          gap: '4px',
+          wordBreak: 'break-word'
         }}
       >
         {history.map((item) => {
           if (item.type === 'input') {
             return (
-              <div key={item.id} style={{ display: 'flex', gap: '8px', color: 'var(--text)' }}>
-                <span style={{ color: 'var(--accent)', userSelect: 'none' }}>guest@ronnproject:~$</span>
+              <div key={item.id} style={{ display: 'flex', gap: '8px', color: 'var(--text)', flexWrap: 'wrap' }}>
+                <span style={{ color: 'var(--accent)', userSelect: 'none', flexShrink: 0 }}>guest@ronnproject:~$</span>
                 <span>{item.text}</span>
               </div>
             );
@@ -269,21 +279,32 @@ export const InteractiveTerminal: FC = () => {
         style={{
           display: 'flex',
           alignItems: 'center',
-          padding: '8px 16px',
+          padding: '8px 12px',
           background: 'var(--surface)',
-          borderTop: '1px solid var(--border)'
+          borderTop: '1px solid var(--border)',
+          gap: '6px'
         }}
       >
-        <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--accent)', marginRight: '8px' }}>
+        <span
+          className="terminal-prompt-full"
+          style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--accent)', flexShrink: 0 }}
+        >
           guest@ronnproject:~$
+        </span>
+        <span
+          className="terminal-prompt-short"
+          style={{ display: 'none', fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--accent)', flexShrink: 0 }}
+        >
+          ~$
         </span>
         <input
           type="text"
           value={inputVal}
           onChange={(e) => setInputVal(e.target.value)}
-          placeholder="Ketik perintah (contoh: projects)..."
+          placeholder="Ketik perintah (help, projects)..."
           style={{
             flex: 1,
+            minWidth: 0,
             background: 'transparent',
             border: 'none',
             outline: 'none',
@@ -302,7 +323,8 @@ export const InteractiveTerminal: FC = () => {
             background: 'var(--surface-selected)',
             border: '1px solid var(--border)',
             color: 'var(--text)',
-            cursor: 'pointer'
+            cursor: 'pointer',
+            flexShrink: 0
           }}
         >
           Enter ↵

@@ -186,13 +186,22 @@ input, select, textarea {
   }
 }
 
-/* Landing Navigation Responsive */
+/* Landing Navigation & Layout Responsiveness */
 @media (max-width: 840px) {
   .desktop-nav-links {
     display: none !important;
   }
+  .desktop-nav-cta {
+    display: none !important;
+  }
   .mobile-hamburger-btn {
     display: flex !important;
+  }
+  .landing-header {
+    padding: 10px 14px !important;
+  }
+  .landing-brand-subtitle {
+    display: none !important;
   }
 }
 
@@ -200,8 +209,114 @@ input, select, textarea {
   .desktop-nav-links {
     display: flex !important;
   }
+  .desktop-nav-cta {
+    display: inline-flex !important;
+  }
   .mobile-hamburger-btn {
     display: none !important;
+  }
+}
+
+/* Mobile Screens Enhancements (Smartphones & Tablets <640px) */
+@media (max-width: 640px) {
+  /* Hero */
+  .hero-section {
+    padding: 86px 16px 36px !important;
+    min-height: auto !important;
+  }
+  .hero-status-chip {
+    padding: 5px 10px !important;
+    font-size: 10px !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    max-width: 100% !important;
+  }
+  .hero-cta-group {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+  .hero-cta-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+  .hero-stats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    margin-top: 18px !important;
+  }
+  .hero-stat-card {
+    padding: 10px 12px !important;
+  }
+  .hero-stat-val {
+    font-size: 17px !important;
+  }
+
+  /* General Section Padding */
+  .landing-section {
+    padding: 44px 16px !important;
+  }
+
+  /* Subdomain & Ecosystem Grid */
+  .ecosystem-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .ecosystem-card {
+    padding: 18px 14px !important;
+  }
+
+  /* Soundwave Card */
+  .soundwave-card {
+    padding: 18px 14px !important;
+  }
+  .soundwave-controls {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+  .soundwave-play-btn {
+    width: 100% !important;
+    justify-content: center !important;
+    height: 44px !important;
+  }
+  .soundwave-header-tag {
+    display: none !important;
+  }
+
+  /* Terminal */
+  .terminal-prompt-full {
+    display: none !important;
+  }
+  .terminal-prompt-short {
+    display: inline !important;
+  }
+  .terminal-title-sub {
+    display: none !important;
+  }
+
+  /* Architecture Grid */
+  .architecture-grid {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .architecture-card {
+    padding: 18px 14px !important;
+  }
+
+  /* Footer */
+  .landing-footer {
+    padding: 28px 16px !important;
+  }
+  .landing-footer-inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px !important;
+  }
+  .landing-footer-links {
+    flex-wrap: wrap !important;
+    gap: 12px 16px !important;
   }
 }
 

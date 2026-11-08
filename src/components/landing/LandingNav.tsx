@@ -31,18 +31,22 @@ export const LandingNav: FC<LandingNavProps> = ({ currentAccent, onAccentChange 
 
   return (
     <header
+      className="landing-header"
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
         right: 0,
         zIndex: 100,
-        padding: isScrolled ? '12px 20px' : '18px 24px',
+        padding: isScrolled ? '10px 16px' : '16px 20px',
         transition: 'padding 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.25s ease, border-color 0.25s ease',
-        background: isScrolled ? 'rgba(11, 13, 16, 0.88)' : 'rgba(11, 13, 16, 0.45)',
+        background: isScrolled ? 'rgba(11, 13, 16, 0.92)' : 'rgba(11, 13, 16, 0.65)',
         backdropFilter: 'blur(20px) saturate(180%)',
         WebkitBackdropFilter: 'blur(20px) saturate(180%)',
-        borderBottom: isScrolled ? '1px solid var(--border)' : '1px solid rgba(255, 255, 255, 0.05)'
+        borderBottom: isScrolled ? '1px solid var(--border)' : '1px solid rgba(255, 255, 255, 0.05)',
+        boxSizing: 'border-box',
+        width: '100%',
+        maxWidth: '100vw'
       }}
     >
       <div
@@ -52,7 +56,9 @@ export const LandingNav: FC<LandingNavProps> = ({ currentAccent, onAccentChange 
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          gap: '16px'
+          gap: '12px',
+          width: '100%',
+          boxSizing: 'border-box'
         }}
       >
         {/* Brand */}
@@ -61,9 +67,10 @@ export const LandingNav: FC<LandingNavProps> = ({ currentAccent, onAccentChange 
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '10px',
+            gap: '8px',
             textDecoration: 'none',
-            color: 'inherit'
+            color: 'inherit',
+            flexShrink: 0
           }}
         >
           <div
@@ -72,17 +79,18 @@ export const LandingNav: FC<LandingNavProps> = ({ currentAccent, onAccentChange 
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              width: '34px',
-              height: '34px',
-              borderRadius: '9px',
+              width: '32px',
+              height: '32px',
+              borderRadius: '8px',
               background: 'var(--surface)',
               border: '1px solid var(--border)',
-              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)'
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
+              flexShrink: 0
             }}
           >
             <svg
-              width="20"
-              height="20"
+              width="18"
+              height="18"
               viewBox="0 0 24 24"
               fill="none"
               stroke="var(--accent)"
@@ -110,29 +118,30 @@ export const LandingNav: FC<LandingNavProps> = ({ currentAccent, onAccentChange 
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <span style={{ fontWeight: 700, fontSize: '17px', letterSpacing: '-0.02em' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '5px' }}>
+              <span style={{ fontWeight: 700, fontSize: '16px', letterSpacing: '-0.02em' }}>
                 ronn<span style={{ color: 'var(--accent)' }}>project</span>
               </span>
               <span
                 style={{
                   fontFamily: 'var(--font-mono)',
-                  fontSize: '10px',
-                  padding: '1px 6px',
+                  fontSize: '9px',
+                  padding: '1px 5px',
                   borderRadius: '4px',
                   background: 'rgba(127, 209, 199, 0.1)',
                   color: 'var(--accent)',
                   border: '1px solid rgba(127, 209, 199, 0.25)',
-                  lineHeight: '1.4'
+                  lineHeight: '1.3'
                 }}
               >
                 my.id
               </span>
             </div>
             <span
+              className="landing-brand-subtitle"
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: '10px',
+                fontSize: '9px',
                 color: 'var(--text-dim)',
                 letterSpacing: '0.04em'
               }}
@@ -149,7 +158,7 @@ export const LandingNav: FC<LandingNavProps> = ({ currentAccent, onAccentChange 
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '8px'
+            gap: '6px'
           }}
         >
           {navLinks.map((link) => (
@@ -157,7 +166,7 @@ export const LandingNav: FC<LandingNavProps> = ({ currentAccent, onAccentChange 
               key={link.href}
               href={link.href}
               style={{
-                padding: '8px 14px',
+                padding: '6px 12px',
                 borderRadius: 'var(--radius-md)',
                 fontSize: '13px',
                 fontWeight: 500,
@@ -180,15 +189,15 @@ export const LandingNav: FC<LandingNavProps> = ({ currentAccent, onAccentChange 
         </nav>
 
         {/* Right Actions: Accent switcher + Dashboard Button */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexShrink: 0 }}>
           {/* Accent Color Palette Switcher */}
           <div
             title="Pilih aksen tema (Mint / Lavender / Amber)"
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '4px',
-              padding: '3px 5px',
+              gap: '3px',
+              padding: '3px 4px',
               borderRadius: '999px',
               background: 'var(--surface)',
               border: '1px solid var(--border)'
@@ -206,8 +215,8 @@ export const LandingNav: FC<LandingNavProps> = ({ currentAccent, onAccentChange 
                   onClick={() => onAccentChange(theme.id)}
                   aria-label={`Ganti aksen tema ke ${theme.label}`}
                   style={{
-                    width: '18px',
-                    height: '18px',
+                    width: '16px',
+                    height: '16px',
                     borderRadius: '50%',
                     backgroundColor: theme.color,
                     border: active ? '2px solid #FFFFFF' : '1px solid transparent',
@@ -220,15 +229,16 @@ export const LandingNav: FC<LandingNavProps> = ({ currentAccent, onAccentChange 
             })}
           </div>
 
-          {/* Quick link to Radio Hub / Dashboard */}
+          {/* Quick link to Radio Hub / Dashboard (Desktop only) */}
           <Link
             to="/radio"
+            className="desktop-nav-cta"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
-              gap: '8px',
-              padding: '0 16px',
-              height: '38px',
+              gap: '7px',
+              padding: '0 14px',
+              height: '36px',
               borderRadius: 'var(--radius-md)',
               background: 'var(--accent)',
               color: '#0B0D10',
@@ -238,7 +248,8 @@ export const LandingNav: FC<LandingNavProps> = ({ currentAccent, onAccentChange 
               boxShadow: '0 2px 14px rgba(127, 209, 199, 0.25)',
               transition: 'transform 0.15s ease, box-shadow 0.15s ease',
               cursor: 'pointer',
-              textDecoration: 'none'
+              textDecoration: 'none',
+              whiteSpace: 'nowrap'
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'translateY(-1px)';
@@ -253,37 +264,38 @@ export const LandingNav: FC<LandingNavProps> = ({ currentAccent, onAccentChange 
               <span
                 style={{
                   display: 'inline-block',
-                  width: '8px',
-                  height: '8px',
+                  width: '7px',
+                  height: '7px',
                   borderRadius: '50%',
                   background: '#0B0D10',
                   animation: 'livePulse 1.2s infinite'
                 }}
               />
             ) : (
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                 <polygon points="5 3 19 12 5 21 5 3"></polygon>
               </svg>
             )}
             <span>Buka Radio Hub</span>
           </Link>
 
-          {/* Mobile Hamburger Toggle */}
+          {/* Mobile Hamburger Toggle Button */}
           <button
             className="mobile-hamburger-btn"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle navigasi mobile"
+            aria-label="Toggle menu navigasi"
             style={{
               display: 'none',
               alignItems: 'center',
               justifyContent: 'center',
-              width: '38px',
-              height: '38px',
+              width: '36px',
+              height: '36px',
               borderRadius: 'var(--radius-md)',
               background: 'var(--surface)',
-              border: '1px solid var(--border)',
+              border: '1px solid var(--border-strong)',
               color: 'var(--text)',
-              cursor: 'pointer'
+              cursor: 'pointer',
+              flexShrink: 0
             }}
           >
             {mobileMenuOpen ? (
@@ -302,19 +314,21 @@ export const LandingNav: FC<LandingNavProps> = ({ currentAccent, onAccentChange 
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
         <div
           style={{
-            marginTop: '12px',
-            padding: '16px',
+            marginTop: '10px',
+            padding: '14px',
             borderRadius: 'var(--radius-lg)',
             background: 'var(--surface)',
             border: '1px solid var(--border-strong)',
             display: 'flex',
             flexDirection: 'column',
-            gap: '12px',
-            boxShadow: '0 16px 36px rgba(0,0,0,0.6)'
+            gap: '10px',
+            boxShadow: '0 16px 36px rgba(0,0,0,0.7)',
+            maxHeight: 'calc(100vh - 80px)',
+            overflowY: 'auto'
           }}
         >
           {navLinks.map((link) => (
@@ -323,15 +337,17 @@ export const LandingNav: FC<LandingNavProps> = ({ currentAccent, onAccentChange 
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
               style={{
-                padding: '10px 14px',
+                padding: '11px 14px',
                 borderRadius: 'var(--radius-md)',
                 fontSize: '14px',
+                fontWeight: 500,
                 color: 'var(--text)',
                 textDecoration: 'none',
                 background: 'rgba(255, 255, 255, 0.03)',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'space-between'
+                justifyContent: 'space-between',
+                border: '1px solid var(--border)'
               }}
             >
               <span>{link.label}</span>
@@ -340,46 +356,69 @@ export const LandingNav: FC<LandingNavProps> = ({ currentAccent, onAccentChange 
               </svg>
             </a>
           ))}
-          <div style={{ height: '1px', background: 'var(--border)' }} />
-          <div style={{ display: 'flex', gap: '8px' }}>
+
+          <div style={{ height: '1px', background: 'var(--border)', margin: '4px 0' }} />
+
+          {/* Action CTAs inside mobile drawer */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             <Link
               to="/radio"
               onClick={() => setMobileMenuOpen(false)}
               style={{
-                flex: 1,
-                height: '42px',
+                width: '100%',
+                height: '44px',
                 borderRadius: 'var(--radius-md)',
                 background: 'var(--accent)',
                 color: '#0B0D10',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                gap: '8px',
                 fontWeight: 600,
-                fontSize: '13px',
-                textDecoration: 'none'
+                fontSize: '14px',
+                textDecoration: 'none',
+                boxSizing: 'border-box'
               }}
             >
-              Radio Hub
+              {isPlaying && (
+                <span
+                  style={{
+                    width: '7px',
+                    height: '7px',
+                    borderRadius: '50%',
+                    background: '#0B0D10',
+                    animation: 'livePulse 1.2s infinite'
+                  }}
+                />
+              )}
+              <span>Buka Studio Radio Hub</span>
             </Link>
+
             <Link
               to="/commands"
               onClick={() => setMobileMenuOpen(false)}
               style={{
-                flex: 1,
-                height: '42px',
+                width: '100%',
+                height: '44px',
                 borderRadius: 'var(--radius-md)',
                 background: 'var(--surface-inset)',
-                border: '1px solid var(--border)',
+                border: '1px solid var(--border-strong)',
                 color: 'var(--text)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
+                gap: '8px',
                 fontWeight: 500,
-                fontSize: '13px',
-                textDecoration: 'none'
+                fontSize: '14px',
+                textDecoration: 'none',
+                boxSizing: 'border-box'
               }}
             >
-              Commands
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <polyline points="4 17 10 11 4 5"></polyline>
+                <line x1="12" y1="19" x2="20" y2="19"></line>
+              </svg>
+              <span>Katalog Perintah Bot</span>
             </Link>
           </div>
         </div>
